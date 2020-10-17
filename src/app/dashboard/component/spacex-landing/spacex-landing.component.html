@@ -1,0 +1,94 @@
+<section class="container-fluid row ml-0 mr-0">
+  <header class=" pt-3">
+    SpaceX Launch Program
+  </header>
+
+  <section class="landing">
+
+    <aside class=" mt-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Filters</h5>
+          <div class="card-content">
+            <div class="launch-year">
+              <div class="text-center"> Launch Year</div>
+              <hr>
+              <div class="row m-0">
+                <span class="col-6 text-center" *ngFor="let year of launchYearList;">
+                  <button type="button"
+                    [ngClass]="(year === launchYear) ? 'btn btn-spacex-active pl-3 pr-3 mb-3 ' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onYearSelection(year)">{{year}}</button>
+                </span>
+              </div>
+            </div>
+            <div class="s-launch">
+              <div class="text-center"> Successfull Launch</div>
+              <hr>
+              <div class="row m-0">
+                <span class="col-6 text-center"
+                  *ngFor="let option of launchOptions;">
+                  <button type="button"
+                    [ngClass]="(option === successfullLaunch) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onSLaunchSelection(option)">{{option}}</button>
+                </span>
+              </div>
+            </div>
+            <div class="s-landing">
+              <div class="text-center"> Successfull Landing</div>
+              <hr>
+              <div class="row m-0">
+                <span class="col-6 text-center" 
+                  *ngFor="let option of launchOptions;">
+                  <button type="button"
+                    [ngClass]="(option === successfullLanding) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onSLandingSelection(option)">{{option}}</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class=" mt-2 p-0" *ngIf="spacexPrograms.length && !isLoading">
+      <div *ngFor="let program of spacexPrograms" class="card d-inline-block p-3 ml-2 mb-2">
+        <img [src]="program?.links?.mission_patch" class="card-img-top" alt="{{program?.mission_name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{program?.mission_name}} #{{program?.flight_number}}</h5>
+          <div class="font-bold">
+            Mission Ids:
+          </div>
+          <ul class="m-0">
+            <li *ngFor="let id of program?.mission_id" class="item">{{id}}</li>
+          </ul>
+          <div>
+            <span class="font-bold">Launch Year : </span> <span class="item">{{program?.launch_year}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Successfull Launch : </span> <span class="item">{{program?.launch_success}}</span>
+          </div>
+          <div>
+            <span class="font-bold">Successfull Landing : </span> <span class="item">{{program?.launch_landing}}</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div *ngIf="!spacexPrograms.length && !isLoading" class="no-data">
+      <div class="content">
+        No Data Available
+      </div>
+    </div>
+
+  </section>
+
+  <section class="loader" *ngIf="isLoading">
+    <div class="spin-pos">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+   <span class="font-bold"> Developed by : </span> Abubakkar Mujeeb
+  </footer>
+
+</section>
