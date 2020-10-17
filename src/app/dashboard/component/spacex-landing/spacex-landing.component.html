@@ -16,7 +16,7 @@
               <div class="row m-0">
                 <span class="col-6 text-center" *ngFor="let year of launchYearList;">
                   <button type="button"
-                    [ngClass]="(year === launchYear) ? 'btn btn-spacex-active pl-3 pr-3 mb-3 ' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onYearSelection(year)">{{year}}</button>
+                    [ngClass]="(year === launchYear) ? 'btn btn-spacex-active pl-3 pr-3 mb-3 ' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onFilterSelection(year, 'year')">{{year}}</button>
                 </span>
               </div>
             </div>
@@ -27,7 +27,7 @@
                 <span class="col-6 text-center"
                   *ngFor="let option of launchOptions;">
                   <button type="button"
-                    [ngClass]="(option === successfullLaunch) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onSLaunchSelection(option)">{{option}}</button>
+                    [ngClass]="(option === successfullLaunch) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onFilterSelection(option, 'launch')">{{option}}</button>
                 </span>
               </div>
             </div>
@@ -38,7 +38,7 @@
                 <span class="col-6 text-center" 
                   *ngFor="let option of launchOptions;">
                   <button type="button"
-                    [ngClass]="(option === successfullLanding) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onSLandingSelection(option)">{{option}}</button>
+                    [ngClass]="(option === successfullLanding) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onFilterSelection(option, 'landing')">{{option}}</button>
                 </span>
               </div>
             </div>

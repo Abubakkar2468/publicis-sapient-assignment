@@ -75,18 +75,14 @@ export class SpacexLandingComponent implements OnInit {
   }
 
 
-  onYearSelection(year) {
-    this.launchYear = year;
-    this.redirect();
-  }
-
-  onSLaunchSelection(val) {
-    this.successfullLaunch = val;
-    this.redirect();
-  }
-
-  onSLandingSelection(val) {
-    this.successfullLanding = val;
+  onFilterSelection(val, type) {
+    if (type === 'year') {
+      this.launchYear = val;
+    } else if (type === 'launch') {
+      this.successfullLaunch = val;
+    } else if (type === 'landing') {
+      this.successfullLanding = val;
+    }
     this.redirect();
   }
 
