@@ -52,7 +52,7 @@
       <div *ngFor="let program of spacexPrograms" class="card d-inline-block p-3 ml-2 mb-2">
         <img data-src="{{program?.links?.mission_patch}}" data-sizes="auto"
           data-srcset="{{program?.links?.mission_patch}} 900w, {{program?.links?.mission_patch_small}} 600w"
-          class="card-img-top lazyload" alt="{{program?.mission_name}}">
+          class="card-img-top" alt="{{program?.mission_name}}">
         <div class="card-body">
           <h5 class="card-title">{{program?.mission_name}} #{{program?.flight_number}}</h5>
           <div class="font-bold">
