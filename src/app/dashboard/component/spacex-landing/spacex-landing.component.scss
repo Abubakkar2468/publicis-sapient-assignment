@@ -117,3 +117,18 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media only screen and (max-width: 699px) {
+  .landing {
+    display: block;
+  }
+
+  main {
+    display: block;
+
+    .card {
+      width: 100%;
+      margin-left: 0 !important;
+    }
+  }
+}
