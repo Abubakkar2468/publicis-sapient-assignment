@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import 'lazysizes';
 
 @Component({
   selector: 'app-spacex-landing',

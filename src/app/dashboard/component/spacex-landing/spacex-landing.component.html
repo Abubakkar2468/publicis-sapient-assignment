@@ -16,7 +16,8 @@
               <div class="row m-0">
                 <span class="col-6 text-center" *ngFor="let year of launchYearList;">
                   <button type="button"
-                    [ngClass]="(year === launchYear) ? 'btn btn-spacex-active pl-3 pr-3 mb-3 ' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onFilterSelection(year, 'year')">{{year}}</button>
+                    [ngClass]="(year === launchYear) ? 'btn btn-spacex-active pl-3 pr-3 mb-3 ' : 'btn btn-spacex pl-3 pr-3 mb-3'"
+                    (click)="onFilterSelection(year, 'year')">{{year}}</button>
                 </span>
               </div>
             </div>
@@ -24,10 +25,10 @@
               <div class="text-center"> Successfull Launch</div>
               <hr>
               <div class="row m-0">
-                <span class="col-6 text-center"
-                  *ngFor="let option of launchOptions;">
+                <span class="col-6 text-center" *ngFor="let option of launchOptions;">
                   <button type="button"
-                    [ngClass]="(option === successfullLaunch) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onFilterSelection(option, 'launch')">{{option}}</button>
+                    [ngClass]="(option === successfullLaunch) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'"
+                    (click)="onFilterSelection(option, 'launch')">{{option}}</button>
                 </span>
               </div>
             </div>
@@ -35,10 +36,10 @@
               <div class="text-center"> Successfull Landing</div>
               <hr>
               <div class="row m-0">
-                <span class="col-6 text-center" 
-                  *ngFor="let option of launchOptions;">
+                <span class="col-6 text-center" *ngFor="let option of launchOptions;">
                   <button type="button"
-                    [ngClass]="(option === successfullLanding) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'" (click)="onFilterSelection(option, 'landing')">{{option}}</button>
+                    [ngClass]="(option === successfullLanding) ? 'btn btn-spacex-active pl-3 pr-3 mb-3' : 'btn btn-spacex pl-3 pr-3 mb-3'"
+                    (click)="onFilterSelection(option, 'landing')">{{option}}</button>
                 </span>
               </div>
             </div>
@@ -49,7 +50,9 @@
 
     <main class=" mt-2 p-0" *ngIf="spacexPrograms.length && !isLoading">
       <div *ngFor="let program of spacexPrograms" class="card d-inline-block p-3 ml-2 mb-2">
-        <img [src]="program?.links?.mission_patch" class="card-img-top" alt="{{program?.mission_name}}">
+        <img data-src="{{program?.links?.mission_patch}}" data-sizes="auto"
+          data-srcset="{{program?.links?.mission_patch}} 900w, {{program?.links?.mission_patch_small}} 600w"
+          class="card-img-top lazyload" alt="{{program?.mission_name}}">
         <div class="card-body">
           <h5 class="card-title">{{program?.mission_name}} #{{program?.flight_number}}</h5>
           <div class="font-bold">
@@ -88,7 +91,7 @@
   </section>
 
   <footer>
-   <span class="font-bold"> Developed by : </span> Abubakkar Mujeeb
+    <span class="font-bold"> Developed by : </span> Abubakkar Mujeeb
   </footer>
 
 </section>
