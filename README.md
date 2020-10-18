@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Lighthouse result
+![Alt text](./src/assets/lighthouse_result.png?raw=true "Lignthouse result")
+
+## stack details
+
+1. Angular 8
+2. LazyLoad implementation
+3. Lazysizes js used for lazyload the images
+4. Filter implementation through router queryparams
