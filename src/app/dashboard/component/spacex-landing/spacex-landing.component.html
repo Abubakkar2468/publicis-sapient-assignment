@@ -68,7 +68,7 @@
             <span class="font-bold">Successfull Launch : </span> <span class="item">{{program?.launch_success}}</span>
           </div>
           <div>
-            <span class="font-bold">Successfull Landing : </span> <span class="item">{{program?.launch_landing}}</span>
+            <span class="font-bold">Successfull Landing : </span> <span class="item">{{(program?.rocket?.first_stage?.cores && program?.rocket?.first_stage?.cores.length) ? (program?.rocket?.first_stage?.cores[0]?.land_success) : '-'}}</span>
           </div>
         </div>
       </div>
