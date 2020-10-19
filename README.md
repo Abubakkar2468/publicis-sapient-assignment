@@ -35,3 +35,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. LazyLoad implementation
 3. Lazysizes js used for lazyload the images
 4. Filter implementation through router queryparams
+5. Bootstrap
